@@ -1,0 +1,61 @@
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <td class="text-left">Image</td>
+      <td class="text-left">Product Name</td>
+      <td class="text-left">Model</td>
+      <td class="text-left col-sm-3">Quantity</td>
+      <td class="text-right">Price</td>
+      <td class="text-right">Total</td>
+    </tr>
+  </thead>
+  <tbody>
+    {{#if products}}
+    {{#products}}
+    <tr id="product_{{_id}}">
+      <td class="col-sm-1 text-left">
+        <img src="{{image}}" class="cart-image" width="57px" height="57px">
+      </td>
+      <td class="text-left">
+        <a href="/index.js?r=product/product&product_id={{_id}}">{{name}}</a>
+      </td>
+
+      <td class="text-left">
+        {{model}}
+      </td>
+      <td class="text-left">
+        <div class="input-group">
+        <input type="text" value="{{quantity}}" name="cart[{{_id}}]" class="form-control"/>
+        <span class="input-group-addon" id="update_product" data-id="{{_id}}"><i class="fa fa-refresh" aria-hidden="true"></i></span>
+        <span class="input-group-addon" id="remove_product" onclick="cart.remove({{_id}});" data-id="{{_id}}"><i class="fa fa-times" aria-hidden="true"></i></span>
+      </div>
+
+      </td>
+      <td class="text-right">
+        ${{price}}
+      </td>
+      <td class="text-right">
+        <span id="total" product_id="{{_id}}">
+          ${{total}}
+        </span>
+      </td>
+    </tr>
+    {{/products}}
+    {{else}}
+    <tr>
+      <td class="text-center" colspan="6">
+        Empty
+      </td>
+    </tr>
+    {{/if}}
+
+  </tbody>
+  <tfoot>
+    <tr>
+      <td class="text-right" colspan="5">
+        Total
+      </td>
+      <td class="text-right total">${{total}}</td>
+    </tr>
+  </tfoot>
+</table>

@@ -1,0 +1,132 @@
+{{>menu elements=categories}}
+{{>breadcrumb this}}
+<h1>Checkout</h1>
+<div id="checkout" class="row form-horizontal">
+  <div class="col-sm-5">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Payment Address</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-group required">
+          <label class="control-label col-sm-3">First Name</label>
+          <div class="col-sm-9">
+            <input type="text" name="order[payment_first_name]" class="form-control" value=""/>
+          </div>
+        </div>
+        <div class="form-group required">
+          <label class="control-label col-sm-3">Last Name</label>
+          <div class="col-sm-9">
+            <input type="text" name="order[payment_last_name]" class="form-control" value=""/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-3">Email</label>
+          <div class="col-sm-9">
+            <input type="text" name="order[email]" class="form-control" value=""/>
+          </div>
+        </div>
+        <div class="form-group required">
+          <label class="control-label col-sm-3">Phone</label>
+          <div class="col-sm-9">
+            <input type="text" name="order[payment_telefone]" class="form-control" value=""/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-3">Post</label>
+          <div class="col-sm-9">
+            <input type="text" name="order[payment_post]"  class="form-control" value=""/>
+          </div>
+        </div>
+        <div class="form-group required">
+          <label class="control-label col-sm-3">Address</label>
+          <div class="col-sm-9">
+            <input type="text" name="order[payment_adress]"  class="form-control" value=""/>
+          </div>
+        </div>
+        <div class="form-group required">
+          <label class="control-label col-sm-3">City</label>
+          <div class="col-sm-9">
+            <input type="text" name="order[payment_city]"  class="form-control" value=""/>
+          </div>
+        </div>
+        <div class="form-group required">
+          <label class="control-label col-sm-3">Country</label>
+          <div class="col-sm-9">
+            <input type="text" name="order[payment_country]"  class="form-control" value=""/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Shipping Address</h3>
+        </div>
+        <div class="panel-body">
+          <div class="form-group required">
+            <label class="control-label col-sm-3">First Name</label>
+            <div class="col-sm-9">
+              <input type="text" name="order[shipping_first_name]" class="form-control" value=""/>
+            </div>
+          </div>
+          <div class="form-group required">
+            <label class="control-label col-sm-3">Last Name</label>
+            <div class="col-sm-9">
+              <input type="text" name="order[shipping_last_name]" class="form-control" value=""/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-3">Post</label>
+            <div class="col-sm-9">
+              <input type="text" name="order[shipping_post]"  class="form-control" value=""/>
+            </div>
+          </div>
+          <div class="form-group required">
+            <label class="control-label col-sm-3">Address</label>
+            <div class="col-sm-9">
+              <input type="text" name="order[shipping_address]"  class="form-control" value=""/>
+            </div>
+          </div>
+          <div class="form-group required">
+            <label class="control-label col-sm-3">Phone</label>
+            <div class="col-sm-9">
+              <input type="text" name="order[shipping_telefone]" class="form-control" value=""/>
+            </div>
+          </div>
+          <div class="form-group required">
+            <label class="control-label col-sm-3">City</label>
+            <div class="col-sm-9">
+              <input type="text" name="order[shipping_city]"  class="form-control" value=""/>
+            </div>
+          </div>
+          <div class="form-group required">
+            <label class="control-label col-sm-3">Country</label>
+            <div class="col-sm-9">
+              <input type="text" name="order[shipping_country]"  class="form-control" value=""/>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="col-sm-7">
+    <div class="panel panel-default cart">
+      <div class="panel-heading">
+        <h3 class="panel-title">Cart</h3>
+      </div>
+      <div class="panel-body">
+        {{>cart this}}
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Confirm</h3>
+      </div>
+      <div class="panel-body">
+        <div class="checkout-button">
+          <a class="btn btn-primary" id="btn-order">Confirm order</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

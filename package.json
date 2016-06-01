@@ -1,0 +1,10 @@
+{
+  "name": "yourStore",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "index.js"
+  },
+  "dependencies": {
+  }
+}

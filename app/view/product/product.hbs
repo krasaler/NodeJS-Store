@@ -1,0 +1,75 @@
+{{>menu elements=categories}}
+{{>breadcrumb this}}
+<div class="product">
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="image">
+        <img src="{{image}}" class="product_image" width="228px" height="228px">
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <h1>{{{name}}}</h1>
+      <div class="row">
+        <span class="price">${{price}}</span>
+      </div>
+      {{#if manufacturer}}
+      <div class="brand">Brand:<strong>{{manufacturer}}</strong></div>
+      {{/if}}
+      <div class="row text-center button-cart">
+        <button type="button" onclick="cart.add('{{_id}}');">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#description">Description</a></li>
+  <li><a data-toggle="tab" href="#review">Reviews</a></li>
+</ul>
+<div class="tab-content">
+  <div id="description" class="tab-pane fade in active">
+    <div class="tab-body">
+      {{{desccription}}}
+    </div>
+  </div>
+  <div id="review" class="tab-pane fade">
+    <div class="tab-body">
+    {{#if reviews}}
+    {{#reviews}}
+      {{>review this}}
+    {{/reviews}}
+    {{else}}
+      no reviews
+    {{/if}}
+    <form class="form-horizontal" id="form-review">
+      <h2>Write Review</h2>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <label class="control-label">Name</label>
+          <input type="text" name="name" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <label class="control-label">Text</label>
+          <textarea name="review" class="form-control"></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <label class="control-label">Rating</label>
+          <input type="radio" name="rating" value="1"/>
+          <input type="radio" name="rating" value="2"/>
+          <input type="radio" name="rating" value="3"/>
+          <input type="radio" name="rating" value="4"/>
+          <input type="radio" name="rating" value="5"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <a class="btn btn-success" id="btn-review" data-id="{{_id}}">Continue</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  </div>
+</div>

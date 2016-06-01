@@ -1,0 +1,38 @@
+<table class="table_cart_popup">
+  <tbody>
+    {{#products}}
+    <tr id="product_{{_id}}">
+      <td class="col-sm-1 text-left">
+        <img src="{{image}}" class="cart-image" width="57px" height="57px">
+      </td>
+      <td class="text-left col-sm-5">
+        <a href="/index.js?r=product/product&product_id={{_id}}">{{{name}}}</a>
+      </td>
+      <td class="text-left">
+        x{{quantity}}
+      </td>
+      <td class="text-left">
+        <span id="total" product_id="{{_id}}">
+          ${{total}}
+        </span>
+      </td>
+      <td class="text-right">
+          <span class="btn btn-danger" id="remove_product" onclick="cart.remove({{_id}});" data-id="{{_id}}"><i class="fa fa-times" aria-hidden="true"></i></span>
+        </td>
+    </tr>
+    {{/products}}
+  </tbody>
+  <tfoot>
+    <tr>
+      <td class="text-right" colspan="4">
+        Total
+      </td>
+      <td class="text-right total">${{total}}</td>
+    </tr>
+      <tr>
+        <td class="text-right" colspan="4">
+        </td>
+          <td class="text-right"><a href="/index.js?r=checkout/cart">Cart</a></td>
+      </tr>
+  </tfoot>
+</table>

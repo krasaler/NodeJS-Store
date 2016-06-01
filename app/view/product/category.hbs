@@ -1,0 +1,30 @@
+{{>menu elements=categories}}
+{{>breadcrumb this}}
+
+<h1>{{text_title}}</h1>
+<div id="category_description">
+  <p><img src="{{image}}" id="category_image"/>
+    {{description}}</p>
+  </div>
+  <div id="products">
+{{#if products}}
+{{#products}}
+  {{>product this}}
+{{/products}}
+{{else}}
+Products in this category are not available
+{{/if}}
+  </div>
+  <nav>
+    {{#if pagination}}
+    <ul class="pagination">
+      {{#pagination}}
+       {{#if current}}
+        <li class="active"><a href="/index.js?r=product/category&category_id={{_id}}&page={{page}}">{{page}}</a></li>
+        {{else}}
+          <li><a href="/index.js?r=product/category&category_id={{_id}}&page={{page}}">{{page}}</a></li>
+        {{/if}}
+      {{/pagination}}
+    </ul>
+    {{/if}}
+  </nav>

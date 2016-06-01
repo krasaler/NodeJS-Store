@@ -1,0 +1,38 @@
+{{>menu elements=categories}}
+<div class="container-fluid">
+<h1>Order Customer</h1>
+<div class="row">
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <td class="text-left">
+          Date order
+        </td>
+        <td class="text-left">
+          Quantity product
+        </td>
+        <td class="text-right">
+          Total Price
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+    {{#if orders}}
+      {{#orders}}
+      <tr>
+        <td class="text-left">
+          {{date_added}}
+        </td>
+        <td class="text-left">
+          {{quantity}}
+        </td>
+        <td  class="text-right">
+          ${{total}}
+        </td>
+      </tr>
+      {{/orders}}
+    {{/if}}
+    </tbody>
+  </table>
+</div>
+</div>

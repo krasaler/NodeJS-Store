@@ -1,0 +1,9 @@
+<ol class="breadcrumb">
+{{#breadcrumb}}
+{{#if class}}
+  <li class="{{class}}">{{{name}}}</li>
+{{else}}
+  <li><a {{{href}}}>{{{name}}}</a></li>
+{{/if}}
+{{/breadcrumb}}
+</ol>

@@ -1,0 +1,11 @@
+{{>menu elements=categories}}
+<div class="owl-carousel">
+  <img src="/image/banner/banner1.jpg">
+  <img src="/image/banner/banner2.jpg">
+</div>
+<h2>Latest Product</h2>
+<div class="row">
+  {{#products}}
+  {{>product this}}
+  {{/products}}
+</div>

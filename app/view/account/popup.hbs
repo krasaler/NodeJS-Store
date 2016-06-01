@@ -1,0 +1,11 @@
+<div class="account_popup">
+  <ul>
+{{#if logged}}
+<li><a href="/index.js?r=account/order">List Order</a></li>
+<li><a href="/index.js?r=account/logout">Logout</a></li>
+{{else}}
+<li><a href="/index.js?r=account/login">Login</a></li>
+<li><a href="/index.js?r=account/register">Register</a></li>
+{{/if}}
+</ul>
+</div>
